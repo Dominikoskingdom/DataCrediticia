@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 7, 2015 6:07:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.devcodespace.dcp.dao.entities.Indiceinflacion" table="indiceinflacion" catalog="datacrediticia" optimistic-lock="version">
+        <id name="idindiceinflacion" type="java.lang.Integer">
+            <column name="idindiceinflacion" />
+            <generator class="identity" />
+        </id>
+        <property name="periodo" type="string">
+            <column name="periodo" length="6" not-null="true" unique="true" />
+        </property>
+        <property name="indiceinflacion" type="big_decimal">
+            <column name="indiceinflacion" precision="5" not-null="true" />
+        </property>
+        <property name="habilitado" type="boolean">
+            <column name="habilitado" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

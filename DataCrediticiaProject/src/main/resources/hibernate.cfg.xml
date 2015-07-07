@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/datacrediticia?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">never@life23</property>
+    <mapping resource="com/devcodespace/dcp/dao/entities/Cliente.hbm.xml"/>
+    <mapping resource="com/devcodespace/dcp/dao/entities/Indiceinflacion.hbm.xml"/>
+    <mapping resource="com/devcodespace/dcp/dao/entities/Moneda.hbm.xml"/>
+    <mapping resource="com/devcodespace/dcp/dao/entities/Tipoproducto.hbm.xml"/>
+    <mapping resource="com/devcodespace/dcp/dao/entities/Historialcrediticio.hbm.xml"/>
+    <mapping resource="com/devcodespace/dcp/dao/entities/Empresa.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

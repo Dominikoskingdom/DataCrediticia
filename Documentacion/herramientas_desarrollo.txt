@@ -1,0 +1,7 @@
+1) Github Account
+2) SourceTree (Git Client)
+3) Netbeans 8.0
+4) Apache Tomcat 8.0.20
+5) A mysql database client
+6) Hibernate (la versión que trae Netbeans en su versión 8.0)
+7) PrimeFaces 5.2

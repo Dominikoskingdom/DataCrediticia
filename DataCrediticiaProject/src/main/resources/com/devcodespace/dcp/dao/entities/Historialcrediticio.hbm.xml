@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 7, 2015 6:07:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.devcodespace.dcp.dao.entities.Historialcrediticio" table="historialcrediticio" catalog="datacrediticia" optimistic-lock="version">
+        <id name="idhistorialcrediticio" type="java.lang.Integer">
+            <column name="idhistorialcrediticio" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="com.devcodespace.dcp.dao.entities.Cliente" fetch="select">
+            <column name="idcliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empresa" class="com.devcodespace.dcp.dao.entities.Empresa" fetch="select">
+            <column name="idempresa" not-null="true" />
+        </many-to-one>
+        <many-to-one name="moneda" class="com.devcodespace.dcp.dao.entities.Moneda" fetch="select">
+            <column name="idmoneda" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoproducto" class="com.devcodespace.dcp.dao.entities.Tipoproducto" fetch="select">
+            <column name="idtipoproducto" not-null="true" />
+        </many-to-one>
+        <property name="limitecredito" type="big_decimal">
+            <column name="limitecredito" precision="20" not-null="true" />
+        </property>
+        <property name="nocuota" type="java.lang.Integer">
+            <column name="nocuota" />
+        </property>
+        <property name="montocuota" type="big_decimal">
+            <column name="montocuota" precision="12" />
+        </property>
+        <property name="balanceactual" type="big_decimal">
+            <column name="balanceactual" precision="20" />
+        </property>
+        <property name="fechatransaccion" type="timestamp">
+            <column name="fechatransaccion" length="19" not-null="true" />
+        </property>
+        <property name="habilitado" type="boolean">
+            <column name="habilitado" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

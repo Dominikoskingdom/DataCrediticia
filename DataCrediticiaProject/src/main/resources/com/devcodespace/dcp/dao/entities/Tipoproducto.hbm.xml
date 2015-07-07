@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 7, 2015 6:07:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.devcodespace.dcp.dao.entities.Tipoproducto" table="tipoproducto" catalog="datacrediticia" optimistic-lock="version">
+        <id name="idtipoproducto" type="java.lang.Integer">
+            <column name="idtipoproducto" />
+            <generator class="identity" />
+        </id>
+        <property name="tipo" type="string">
+            <column name="tipo" length="200" not-null="true" unique="true" />
+        </property>
+        <property name="comentario" type="string">
+            <column name="comentario" length="6000" />
+        </property>
+        <property name="habilitado" type="boolean">
+            <column name="habilitado" not-null="true" />
+        </property>
+        <set name="historialcrediticios" table="historialcrediticio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idtipoproducto" not-null="true" />
+            </key>
+            <one-to-many class="com.devcodespace.dcp.dao.entities.Historialcrediticio" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 7, 2015 6:07:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.devcodespace.dcp.dao.entities.Cliente" table="cliente" catalog="datacrediticia" optimistic-lock="version">
+        <id name="idcliente" type="java.lang.Integer">
+            <column name="idcliente" />
+            <generator class="identity" />
+        </id>
+        <property name="identificacion" type="string">
+            <column name="identificacion" length="13" not-null="true" unique="true">
+                <comment>RNC o C&#233;dula</comment>
+            </column>
+        </property>
+        <property name="nombres" type="string">
+            <column name="nombres" length="100" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="100" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="65535" />
+        </property>
+        <property name="telefonocasa" type="string">
+            <column name="telefonocasa" length="20" />
+        </property>
+        <property name="telefonocelular" type="string">
+            <column name="telefonocelular" length="20" />
+        </property>
+        <property name="correoelectronico" type="string">
+            <column name="correoelectronico" length="200" not-null="true" />
+        </property>
+        <property name="fechanacimiento" type="date">
+            <column name="fechanacimiento" length="10" not-null="true" />
+        </property>
+        <property name="habilitado" type="boolean">
+            <column name="habilitado" not-null="true" />
+        </property>
+        <set name="historialcrediticios" table="historialcrediticio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcliente" not-null="true" />
+            </key>
+            <one-to-many class="com.devcodespace.dcp.dao.entities.Historialcrediticio" />
+        </set>
+    </class>
+</hibernate-mapping>
